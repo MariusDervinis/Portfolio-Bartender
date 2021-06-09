@@ -8,6 +8,20 @@ function ScrollToMessageBox() {
     var elmnt = document.getElementById("contact");
     if (elmnt.classList.contains("submitted")) { elmnt.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 };
+
+var image = document.getElementById("video"),
+    button = document.getElementById("play-btn");
+
+if (image && button) {
+    button.onclick = function() {
+        if (image.classList.contains("active")) {
+            image.classList.remove('active');
+        } else {
+            image.classList.add('active');
+        }
+    };
+}
+
 window.onload = function() {
     "use strict";
 
