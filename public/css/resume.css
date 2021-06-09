@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700;900&display=swap');
+body {
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.0em;
+    color: #232323;
+}
+
+p,
+h1,
+h2 {
+    padding: unset;
+    margin: unset;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 0.5em;
+    padding-bottom: 0.2em;
+}
+
+ul {
+    padding-left: 1em;
+    margin: unset;
+    text-align: left;
+    line-height: 1.6;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.page {
+    background-color: #fcfcfc;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.lang {
+    /* display: flex; */
+    display: none;
+    flex-direction: row-reverse;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.lang .flag {
+    width: 2em;
+    margin: 0.2em;
+}
+
+section {
+    padding: 1em 0;
+}
+
+.container {
+    margin: 0 1em;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    margin: 1em;
+    object-fit: cover;
+}
+
+.main-container,
+.single-container,
+.double-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.content {
+    margin: 1em;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+}
+
+.name {
+    font-size: 1.8em;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+.job-title {
+    font-size: 1.4em;
+    font-weight: 500;
+    align-self: flex-start;
+    height: 50px;
+    color: #009DFF;
+    position: relative;
+    top: 4px;
+}
+
+.item {
+    padding-bottom: 0.2em;
+    margin-top: 0.5em;
+    color: #009DFF;
+}
+
+.item-info {
+    text-decoration: none;
+    color: #232323;
+}
+
+.item-title a:hover {
+    text-decoration: underline;
+    color: #009DFF;
+}
+
+.project-link {
+    margin-bottom: 0.5em;
+}
+
+.project-link a {
+    color: #009DFF;
+    margin: 0.3em;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.section-date,
+.section-place {
+    color: #009DFF;
+}
+
+.desktop,
+.tablet {
+    display: none;
+}
+
+@media (min-width:650px) {
+    .container {
+        margin: 0 2em;
+    }
+    .mobile {
+        display: none;
+    }
+    .profile-img.mobile {
+        display: initial;
+    }
+    .tablet {
+        display: initial;
+    }
+    .job-title.tablet {
+        display: flex;
+    }
+    .main-container {
+        flex-flow: row;
+        justify-content: space-evenly;
+        text-align: left;
+    }
+    .double-container {
+        flex-flow: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: left;
+    }
+    .double-container .content {
+        width: 40%;
+    }
+    .single-container {
+        justify-content: space-between;
+        text-align: left;
+    }
+    .name {
+        height: 50px;
+    }
+    .items {
+        justify-content: flex-start;
+    }
+    .education .container {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: left;
+        align-items: flex-start;
+    }
+    .education .single-container {
+        flex-wrap: wrap;
+        width: 45%;
+    }
+}
+
+@media (min-width:1024px) {
+    .page {
+        margin: 2em auto;
+    }
+    .name {
+        font-size: 2em;
+    }
+    .job-title {
+        font-size: 1.8em;
+    }
+    .mobile {
+        display: none;
+    }
+    .profile-img.mobile {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+    .desktop {
+        display: initial;
+    }
+}
+
+.slice {
+    width: 90%;
+    margin: auto;
+    border-bottom: 3px solid #009DFF;
+    opacity: 0.2;
+}

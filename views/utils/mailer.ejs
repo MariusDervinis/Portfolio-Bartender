@@ -1,0 +1,64 @@
+<% if (locals.flash){ %>
+    <section id="contact" class="contact submitted">
+        <div class="container">
+
+            <div class="section-title">
+                <h2><span>Contact</span> Me</h2>
+                <p>Like what you see? Then let's get in touch!</p>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <form class="php-email-form">
+                <div class="row">
+                    <div class="form-group mt-3">
+                        <input type="text" name="name" class="form-control" id="name" placeholder=<%=name%> disabled>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group mt-3">
+                        <input type="email" class="form-control" name="email" id="email" placeholder=<%=email%> disabled>
+                    </div>
+
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control" name="text" rows="5" placeholder=<%=message%> disabled></textarea>
+                </div>
+                <div class="text-center"><button type="submit" disabled name="send_mail" class="button button-dark "><%=flash%></button></div>
+
+            </form>
+        </div>
+    </section>
+    <% } else { %>
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2><span>Contact</span> Me</h2>
+                    <p>Like what you see? Then let's get in touch!</p>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <form action="/sendmail" class="php-email-form" method="POST" autocomplete="off">
+
+                    <div class="row">
+                        <div class="form-group mt-3">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group mt-3">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="text" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="text-center"> <button type="submit" name="send_mail" class="text-center ">Send</button></div>
+
+                </form>
+            </div>
+        </section>
+        <%  } %>
