@@ -33,12 +33,33 @@ app.use(flash());
 //Requiring routes
 var indexRoutes = require("./routes/index");
 
+//Locale
+const locale = require("locale"),
+    supportedLng = new locale.Locales(['en', 'lt', 'en_US', 'en_GB']),
+    defaultLng = "en";
+app.use(locale(supportedLng, defaultLng))
+
+
+
 //ROUTER
 app.use("/", indexRoutes);
 
 app.get("/resume", (req, res) => {
-    res.render("resume")
-});
+    if (req.locale === 'lt') {
+        res.render("resume-lt")
+    } else {
+        res.render("resume-en")
+    }
+})
+
+app.get("/resume-en", (req, res) => {
+    res.render("resume-en")
+})
+app.get("/resume-lt", (req, res) => {
+    res.render("resume-lt")
+})
+
+
 
 app.post('/sendmail', (req, res) => {
 
@@ -67,6 +88,9 @@ app.post('/sendmail', (req, res) => {
     });
 });
 
+app.get('*', function(req, res) {
+    res.redirect('/');
+});
 
 app.listen(process.env.PORT, function() {
     console.log("Portfolio server has started!")
